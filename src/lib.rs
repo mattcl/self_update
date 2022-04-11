@@ -479,6 +479,7 @@ impl<'a> Extract<'a> {
                 #[cfg(feature = "archive-tar")]
                 ArchiveKind::Tar(_) => {
                     debug!("Extracting from tar");
+                    debug!("Looking for: {}", file_to_extract);
 
                     let mut archive = tar::Archive::new(reader);
                     let mut entry = archive
